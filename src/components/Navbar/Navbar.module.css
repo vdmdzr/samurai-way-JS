@@ -1,0 +1,14 @@
+.nav {
+    background-color: #e1e7cf;
+    padding: 20px;
+}
+
+.item a {
+    color: #2a3034;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: #95be47;
+    font-weight: 600;
+}
