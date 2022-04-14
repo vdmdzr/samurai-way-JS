@@ -8,7 +8,7 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import {Profile} from "./components/Profile/Profile";
-import {updateNewPostText} from "./redux/state";
+import {updateNewPostText} from "./redux/store";
 
 const App = (props) => {
 

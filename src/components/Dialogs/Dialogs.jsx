@@ -11,7 +11,6 @@ const Dialogs = (props) => {
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
     let messagesElements = state.messages.map(m => <Message message={m.message}/>)
     let newMessageBody = state.newMessageBody
-    // console.log("sded",state)
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator())
     }

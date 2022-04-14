@@ -1,6 +1,8 @@
-import profileReducer from "./profileReducer";
-import dialogsReducer from "./dialogsReducer";
-import sidebarReducer from "./sidebarReducer";
+import {profileReducer} from "./profileReducer";
+import {dialogsReducer} from "./dialogsReducer";
+import {sidebarReducer} from "./sidebarReducer";
+
+//already don`t use
 
 let store = {
     _state: {
@@ -44,17 +46,13 @@ let store = {
 
     dispatch(action) {   //{type: '---'}обязательно
         // const {type} = action//деструктуризация
-        profileReducer(this._state.profilePage,action)
-        dialogsReducer(this._state.dialogsPage,action)
-        sidebarReducer()
+        this._state.profilePage = profileReducer(this._state.profilePage,action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar,action)
 
         this._callSubscriber(this._state)
     }
 }
-
-
-
-
 
 export default store
 window.store = store
