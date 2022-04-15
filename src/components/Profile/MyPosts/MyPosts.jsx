@@ -4,18 +4,20 @@ import {Post} from "./Post/Post";
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
 
-
 export const MyPosts = (props) => {
 
-    let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+    let postsElements = props.posts.map(p =>
+      <Post message={p.message} likesCount={p.likesCount}/>)
+
     let newPostElement = React.createRef()
-    const addPost = () => {
-        props.dispatch(addPostActionCreator())
+
+    const onAddPost = () => {
+        props.addPost()
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value
-        props.dispatch(updateNewPostTextActionCreator(text))// передаем каждое изменение эрии в стэйт, а уже из стэйта перерисовываем эрию
+        props.updateNewPostText(text)
     }
 
     return (
@@ -27,7 +29,7 @@ export const MyPosts = (props) => {
                             value={props.newPostText}/>
               </div>
               <div className={s.buttonPost}>
-                  <button onClick={addPost}>add post</button>
+                  <button onClick={onAddPost}>add post</button>
               </div>
           </div>
           <div className={s.posts}>
