@@ -4,20 +4,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
+import {StoreContext} from "./storeContecst";
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
       <BrowserRouter>
-          <App store={store} state={state} dispatch={store.dispatch.bind(store)}//bind возвр функцию в которой this будет store
-               />
+          <StoreContext.Provider value={store}>
+              <App/>
+          </StoreContext.Provider>
       </BrowserRouter>, document.getElementById('root'));
 }
 
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
-store.subscribe(()=>{
-    let state = store.getState()
-  rerenderEntireTree(state)
+store.subscribe(() => {
+    rerenderEntireTree()
 })
 
 
