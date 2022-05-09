@@ -1,11 +1,11 @@
 import React from "react";
 import {
-    unfollowAC,
-    followAC,
-    setUsersAC,
-    setCurrentPageAC,
-    setUsersTotalCountAC,
-    toggleIsFetchingAC
+    unfollow,
+    follow,
+    setUsers,
+    setCurrentPage,
+    toggleIsFetching,
+    setTotalUsersCount
 } from "../../redux/usersReducer";
 import {connect} from "react-redux";
 import * as axios from "axios";
@@ -61,30 +61,32 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching)=>{
-            dispatch(toggleIsFetchingAC(isFetching))
-        },
-    }
-}
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {
+//             dispatch(followAC(userId))
+//         },
+//         unfollow: (userId) => {
+//             dispatch(unfollowAC(userId))
+//         },
+//         setUsers: (users) => {
+//             dispatch(setUsersAC(users))
+//         },
+//         setCurrentPage: (pageNumber) => {
+//             dispatch(setCurrentPageAC(pageNumber))
+//         },
+//         setTotalUsersCount: (totalCount) => {
+//             dispatch(setUsersTotalCountAC(totalCount))
+//         },
+//         toggleIsFetching: (isFetching)=>{
+//             dispatch(toggleIsFetchingAC(isFetching))
+//         },
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+export default connect(mapStateToProps,{
+    follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching,
+    })(UsersContainer)
 
 
 
