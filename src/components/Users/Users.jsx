@@ -4,7 +4,6 @@ import userPhoto from "../../assets/images/png-clipart.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
 
-
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
     let pages = []
