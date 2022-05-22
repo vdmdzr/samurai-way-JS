@@ -14,8 +14,8 @@ let reducers = combineReducers({
     auth: authReducer,
 })
 
-let store = legacy_createStore(reducers,applyMiddleware(thunkMiddleware))
+let store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))
 
-window.store=store
+window.store = store
 
 export default store

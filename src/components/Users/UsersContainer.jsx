@@ -25,7 +25,7 @@ export class UsersContainer extends React.Component {
                      onPageChanged={this.onPageChanged}
                      users={this.props.users}
                      follow={this.props.follow}
-                     unfolklow={this.props.unfollow}
+                     unfollow={this.props.unfollow}
                      toggleFollowingProgress={this.props.toggleFollowingProgress}
                      followingInProgress={this.props.followingInProgress}
               />
