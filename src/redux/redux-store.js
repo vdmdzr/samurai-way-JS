@@ -17,6 +17,7 @@ let reducers = combineReducers({
     form: formReducer,
 })
 
+
 let store = legacy_createStore(reducers, applyMiddleware(thunkMiddleware))
 
 window.store = store
