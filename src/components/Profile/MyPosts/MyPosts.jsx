@@ -38,4 +38,5 @@ const AddNewPostForm = (props) => {
   )
 }
 
+
 const AddNewPostFormRedux = reduxForm({form: 'ProfileAddNewPostForm'})(AddNewPostForm)
