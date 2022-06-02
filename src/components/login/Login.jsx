@@ -21,6 +21,7 @@ export const LoginForm = (props) => {
     )
 }
 
+
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 export const Login = (props) => {
