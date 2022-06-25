@@ -24,7 +24,9 @@ const AddNewPostFormRedux = reduxForm({form: 'ProfileAddNewPostForm'})(AddNewPos
 
 export const MyPosts = React.memo(props => {
     console.log('y')
-    let postsElements = props.posts.map(p =>
+    let postsElements = [...props.posts]
+        .reverse()
+        .map(p =>
         <Post message={p.message} likesCount={p.likesCount}/>)
 
     const onAddPost = (values) => {
